@@ -1,0 +1,15 @@
+* {
+	
+}
+
+#wrapper {
+	width: 480px;
+	margin: 0 auto;
+}
+
+.grid-div {
+	width: 30px;
+	height: 30px;
+	background-color: #7dbed4;
+	float: left;
+}
