@@ -20,15 +20,24 @@ $(document).ready(function() {
 			 $('.grid-div:first-child').clone().appendTo('#grid-container');
 		}
 		
-		$('.grid-div').mouseenter(function() {
-			$(this).css('opacity', '0');
+		$('.grid-div').mousedown(function() {
+			
 			$(this).css('background-color', '#d4937d');
+			
+			$('.grid-div').mouseenter(function() {
+				$(this).css('background-color', '#d4937d');
+			});
 			
 		});
 		
-		$('.grid-div').mouseleave(function() {
-			$(this).animate({'opacity': 100}, 3000);
+		$('.grid-div').mouseup(function() {
+			
+			$('.grid-div').off('mouseenter');
+			$('.grid-div').off('mouseleave');
+			
 		});
+		
+
 	
 	});
 
