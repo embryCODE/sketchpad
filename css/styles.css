@@ -1,9 +1,35 @@
 * {
-	
+	font-family: arial, sans-serif;	
+	background-color: black;
 }
 
-#wrapper {
-	width: 480px;
+body {
+	width: 1200px;
+}
+
+#button {
+	width: 150px;
+	padding: 10px 20px;
+	margin: 25px auto 30px;
+	background-color: #bbbbbb;
+	text-align: center;
+	color: black;
+	border-radius: 5px;
+}
+
+#button:hover {
+	background-color: #e0e0e0;
+}
+
+#button a {
+	text-decoration: none;
+	color: black;
+	background-color: inherit;
+	cursor: default;
+}
+
+#grid-container {
+	width: 800px;
 	margin: 0 auto;
 }
 
@@ -13,3 +39,4 @@
 	background-color: #7dbed4;
 	float: left;
 }
+

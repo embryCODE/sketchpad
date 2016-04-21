@@ -1,18 +1,36 @@
 $(document).ready(function() {
 	
-	//create divs using loop
-	for (var i = 0; i < 255; i++) {
-		 $('.grid-div:first-child').clone().appendTo('#wrapper');
-	}
+	//hide div until after prompt
+	$('.grid-div').hide();
 	
-	$('.grid-div').mouseenter(function() {
-		$(this).css('opacity', '0');
-		$(this).css('background-color', '#d4937d');
+	$('#button').click(function() {
+		//clear previous set of divs
+		$('#grid-container').html('<div class="grid-div"></div>');
+		$('.grid-div').hide();
+		//set size of divs based on user input
+		var userNumberOfSquares = prompt("How many squares per side would you like the grid to be?");
+		$('.grid-div').show();
+		var divSize = 800 / userNumberOfSquares;
+		$('.grid-div').css("width", divSize);
+		$('.grid-div').css("height", divSize);
+		var loopsNeededToSquare = userNumberOfSquares * userNumberOfSquares;
 		
-	});
+		//create divs using loop
+		for (var i = 0; i < loopsNeededToSquare - 1; i++) {
+			 $('.grid-div:first-child').clone().appendTo('#grid-container');
+		}
+		
+		$('.grid-div').mouseenter(function() {
+			$(this).css('opacity', '0');
+			$(this).css('background-color', '#d4937d');
+			
+		});
+		
+		$('.grid-div').mouseleave(function() {
+			$(this).animate({'opacity': 100}, 3000);
+		});
 	
-	$('.grid-div').mouseleave(function() {
-		$(this).animate({'opacity': 100}, 3000);
 	});
+
 	
 });
